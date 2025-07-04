@@ -1,0 +1,156 @@
+@font-face{
+    font-family: 'Glamore';
+    src: url('/static/fonts/Glamore.woff2') format('woff2');
+    font-weight: normal;
+    font-style: normal;
+}
+
+@property --gradient-start{
+    syntax: "<color>";
+    initial-value: transparent;
+    inherits: false;
+}
+
+@property --gradient-end{
+    syntax: "<color>";
+    initial-value: transparent;
+    inherits: false;
+}
+
+body{
+    --gradient-start: #99CCFF ;
+    --gradient-end: #054f7a;
+    height: 95vh;
+    width: 95vw;
+    transition: 1s --gradient-start, 1s --gradient-end;
+    background: linear-gradient(
+        to right,
+        var(--gradient-start),
+        var(--gradient-end)
+    );
+}
+
+body:hover{
+    --gradient-start: #054f7a;
+    --gradient-end: #99CCFF ;
+}
+
+/*-------------------Esto es lo que esta en chatbot.html-----------------*/
+.chat-container{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+#chatbox{
+    background-color: #FFFFFF;
+    width: 50rem;
+    height: auto;
+    border-radius: 50px 20px 50px 20px;
+    padding-bottom: 1%;
+}
+
+.chat-nav{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+    background-color: #076AA3;
+    border-radius: 50px 20px 0px 0px;
+    padding: 2% 5%;
+}
+
+.btn{
+    position: absolute;
+    left: 10px;
+    border-radius: 50px;
+}
+
+.btn:hover{
+    background-color: #054f7a;
+}
+
+.btn i{
+    color: #FFFFFF;
+}
+
+.chat-nav h2{
+    margin: 0 auto;
+    text-align: center;
+    font-family: 'Glamore', sans-serif;
+    font-size: 30px;
+    color: #FFFFFF;
+}
+
+#chatlog {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.searcher{
+    padding-left: 2%;
+}
+
+.searcher input{
+    width: 90%;
+    height: 30%;
+    border-radius: 10px;
+    border-width: 1px;
+    font-family: 'Times New Roman', Times, serif;
+    font-size: 20px;
+}
+
+.btn-search{
+    width: 5%;
+    height: 20%;
+    background-color: #076AA3;
+    border-radius: 50px;
+    border: none;
+    padding: 2px 5px;
+}
+
+.btn-search i{
+    color: #FFFFFF;
+    padding: 2% 5%;
+}
+
+.btn-search:hover{
+    background-color: #054f7a;
+}
+
+/*-------------------Esto es lo que esta en script.j-----------------*/
+.chat-user{
+    background-color: #4996c3;
+    align-self: flex-end;
+    text-align: right;
+    color: #FFFFFF;
+    font-family: 'Times New Roman', Times, serif;
+    font-size: 20px;
+    padding: 0px 10px;
+    border-radius: 15px;
+    margin-right: 1%;
+}
+
+.chat-bot{
+    background-color: #054f7a;
+    align-self: flex-start;
+    text-align: left;
+    color: #FFFFFF;
+    font-family: 'Times New Roman', Times, serif;
+    font-size: 20px;
+    padding: 0px 10px;
+    border-radius: 15px;
+    margin-left: 1%;
+    width: 60%;
+}
+
+.imagen{
+    text-align: center;
+}
+
+.imagen img{
+    width: 50%;
+    height: 5%;
+    padding-bottom: 10px;
+}

@@ -1,0 +1,49 @@
+@font-face{
+    font-family: 'Glamore';
+    src: url('/static/fonts/Glamore.woff2') format('woff2');
+    font-weight: normal;
+    font-style: normal;
+}
+
+/*----------------------Esto es en chatbot.html--------------------------*/
+.offcanvas-header{
+    background-color: #33aaee;
+    font-family: 'Glamore', sans-serif;
+    font-size: 20px;
+}
+
+.offcanvas-body{
+    background-color: #33aaee;
+    padding: 1rem;
+    gap: 1rem;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    overflow-y: auto;          /* Activa el scroll vertical */
+    max-height: calc(100vh - 56px);
+}
+
+/*-------------------Esto es en scripts.js------------------------*/
+.card{
+    text-align: center;
+    width: 18rem;
+    background-color: #cde7f8;
+    margin-bottom: 1rem;
+    color: #000000;
+}
+
+.fecha{
+    font-family: 'Times New Roman', Times, serif;
+    font-size: 20px;
+    color: #054f7a;
+}
+
+.concepto{
+    font-family: 'Times New Roman', Times, serif;
+    font-size: 18px;
+}
+
+.respuesta{
+    font-family: 'Times New Roman', Times, serif;
+    font-size: 18px;
+}
