@@ -28,10 +28,10 @@ router.get("/", async (req, res) => {
   let collection = [];
 
   // Determinar a qué colección buscar
-  const expressionKeys = ["como se hace", "como es", "como hacer", "como se dice", "expresion", "letra", "ñ", "n"].map(normalize);
-  const functionalityKeys = ["como funciona", "que hace", "funcionamiento"].map(normalize);
-  const storyKeys = ["que es", "lsm", "lenguaje", "historia", "mexicano"].map(normalize);
-  const otherKeys = ["hola", "adios", "gracias por", "quien eres"].map(normalize);
+  const expressionKeys = ["se hace", "hacer","como se señala","se dice","expresion","letra","alfabeto","simbolo","gesto"].map(normalize);
+  const functionalityKeys = ["funciona","funcionamiento","como opera","como trabaja","que hace","uso","utilidad","para que sirve","como se utiliza","signify","signiai"].map(normalize);
+  const storyKeys = ["que es","que significa","significado","lsm","lenguaje de señas","lenguaje","historia","origen","contexto","mexicano","mexicana","de mexico"].map(normalize);
+  const otherKeys = ["hola","adios","gracias","muchas gracias","quien eres","presentate","tu nombre","saludo","como estas","buenos dias","buenas tardes"].map(normalize);
 
   console.log("Texto normalizado:", low);
   console.log("Coincide con alguna palabra clave:", expressionKeys.some(k => low.includes(k)));

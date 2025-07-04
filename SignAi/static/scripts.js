@@ -36,7 +36,7 @@ async function enviarPregunta() {
           </div>`;
         }
         return `<div class="chat-bot">
-          <p><i class="fa-solid fa-hands-praying"></i>: No hay una respuesta clara.</p>
+          <p><i class="fa-solid fa-hands-praying"></i>: No hay una respuesta clara. Por favor vuelve a reformular tu pregunta.</p>
           </div>`;
       }).join("");
 
@@ -51,6 +51,8 @@ async function enviarPregunta() {
           </div>`;
     }
     document.getElementById("mensaje").value = "";
+
+    chatlog.scrollTop = chatlog.scrollHeight;
 
   } catch (err) {
     chatlog.innerHTML += `<div class="chat-bot">
