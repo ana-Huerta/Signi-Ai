@@ -28,7 +28,7 @@ router.get("/", async (req, res) => {
   let collection = [];
 
   // Determinar a qué colección buscar
-  const expressionKeys = ["se hace", "hacer","como se señala","se dice","expresion","letra","alfabeto","simbolo","gesto"].map(normalize);
+  const expressionKeys = ["como se", "se hace", "hacer","como se señala","como se dice","expresion","letra","alfabeto","simbolo","gesto"].map(normalize);
   const functionalityKeys = ["funciona","funcionamiento","como opera","como trabaja","que hace","uso","utilidad","para que sirve","como se utiliza","signify","signiai"].map(normalize);
   const storyKeys = ["que es","que significa","significado","lsm","lenguaje de señas","lenguaje","historia","origen","contexto","mexicano","mexicana","de mexico"].map(normalize);
   const otherKeys = ["hola","adios","gracias","muchas gracias","quien eres","presentate","tu nombre","saludo","como estas","buenos dias","buenas tardes"].map(normalize);
@@ -72,12 +72,14 @@ if (expressionKeys.some(k => low.includes(k))) {
           break;
       }
 
+      const palabras = query.split(" ");
+
       if (col === "expression") {
         data = await model.findOne({
-          $or: [
-            { expresion: { $regex: query, $options: "i" } }
-          ]
-        });
+          $or: palabras.map(palabra => ({
+            expresion: { $regex: palabra, $options: "i" }
+          }))
+      });
       } else {
         data = await model.findOne({ $text: { $search: query } });
       }
